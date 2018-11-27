@@ -9,6 +9,8 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 
 		GreetingWebClient gwc = new GreetingWebClient();
+		System.out.println("aaaa");
+		System.out.println("bbbb");
 		System.out.println(gwc.getResult());
 	}
 }
