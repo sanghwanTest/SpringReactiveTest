@@ -19,7 +19,7 @@ public class GreetingHandler {
 	
 	public Mono<ServerResponse> keys(ServerRequest request){
 		return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8)
-				.body(BodyInserters.fromObject("{'resultCode': 'true' or 'false','data' : {'keyName': 'SKT_APP_KEY','appKey' : 'fd986e75-1ef6-4d55-a356-8ca2fea3e156'}}"));
+				.body(BodyInserters.fromObject("{'resultCode': 'true','data' : {'keyName': 'SKT_APP_KEY','appKey' : 'fd986e75-1ef6-4d55-a356-8ca2fea3e156'}}"));
 	}
 	
 }
