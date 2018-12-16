@@ -9,8 +9,12 @@ import reactor.core.publisher.Mono;
 public class GreetingWebClient {
 	private WebClient client = WebClient.create("http://localhost:18080");
 
-	private Mono<ClientResponse> result = client.get()
+	/*private Mono<ClientResponse> result = client.get()
 			.uri("/hello")
+			.accept(MediaType.TEXT_PLAIN)
+			.exchange();*/
+	private Mono<ClientResponse> result = client.get()
+			.uri("/keys/1")
 			.accept(MediaType.TEXT_PLAIN)
 			.exchange();
 

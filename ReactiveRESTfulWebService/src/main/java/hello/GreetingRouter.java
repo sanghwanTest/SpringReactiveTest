@@ -13,7 +13,11 @@ public class GreetingRouter {
 
 	@Bean
 	public RouterFunction<ServerResponse> route(GreetingHandler greetingHandler){
-		return RouterFunctions.route(RequestPredicates.GET("/hello").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello);
+		return RouterFunctions.route(RequestPredicates.GET("/hello")
+										.and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello)
+							.andRoute(RequestPredicates.GET("/keys/1")
+										.and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::keys)
+				;
 	}
 	
 }
