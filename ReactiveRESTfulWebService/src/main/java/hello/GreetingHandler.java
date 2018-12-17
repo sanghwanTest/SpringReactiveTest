@@ -23,6 +23,7 @@ public class GreetingHandler {
 	}
 	
 	public Mono<ServerResponse> callme(ServerRequest request){
+		System.out.println("callme");
 		return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8)
 				.body(BodyInserters.fromObject("Listen Port 18080"));
 	}
